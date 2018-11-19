@@ -52,7 +52,7 @@ var getCoarseLocation = function () {
 
         document.getElementById('longitude-input').value = response.longitude;
 
-        p1 = { lat: response.lat, lon: response.lon };
+        p1 = { lat: response.latitude, lon: response.longitude };
 
       }
 
@@ -62,9 +62,10 @@ var getCoarseLocation = function () {
 
 var rad = x => x * Math.PI / 180;
 
-var updateLocation = function () {
+var checkProximity = function () {
 
   document.getElementById('lt100').style.display = 'none';
+  document.getElementById('gt100').style.display = 'none';
 
   var p2 = {
     lat: Number(document.getElementById('latitude-input').value),
@@ -86,6 +87,10 @@ var updateLocation = function () {
   if (d <= 100) {
 
     document.getElementById('lt100').style.display = 'block';
+
+  } else {
+
+    document.getElementById('gt100').style.display = 'block';
 
   }
 

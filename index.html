@@ -21,17 +21,18 @@
     <p>Following is your precise location.</p>
   </div>
 
-  <p>You may change the values and click update.</p>
+  <p>Change the values to check your proximity to auto-detected location.</p>
 
   <form>
     <label>Latitude</label>
     <input value="0" id="latitude-input" step=".0000001" type="number">
     <label>Longitude</label>
     <input value="0" id="longitude-input" step=".0000001" type="number">
-    <button onclick="updateLocation()" type="button">Update</button>
+    <button onclick="checkProximity()" type="button">Check Proximity</button>
   </form>
 
   <p id="lt100" style="display: none;">You are within 100m of detected location.</p>
+  <p id="gt100" style="display: none;">You are beyond 100m of detected location.</p>
 
   <script src="script.js"></script>
 </body>

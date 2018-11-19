@@ -42,15 +42,15 @@ var getGeolocation = function () {
 
 var getCoarseLocation = function () {
 
-  fetch('http://ip-api.com/json').then(
+  fetch('https://ipapi.co/json').then(
 
     (responsePromise) => responsePromise.json()).then(
 
       (response) => {
 
-        document.getElementById('latitude-input').value = response.lat;
+        document.getElementById('latitude-input').value = response.latitude;
 
-        document.getElementById('longitude-input').value = response.lon;
+        document.getElementById('longitude-input').value = response.longitude;
 
         p1 = { lat: response.lat, lon: response.lon };
 

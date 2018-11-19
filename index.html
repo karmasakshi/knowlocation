@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="initial-scale=1">
+  <meta charset="utf-8">
+  <title>Know Location</title>
+  <style>
+    button[disabled] { opacity: 0.5; }
+  </style>
+</head>
+
+<body>
+
+  <div id="coarse-location">
+    <p>Following is your coarse location. This information is based on your Internet connection.</p>
+    <p id="geolocation-text">You may share your precise location: <button onclick="getGeolocation()" id="getgeo" type="button">Share Precise Location</button></p>
+  </div>
+
+  <div id="precise-location" style="display: none;">
+    <p>Following is your precise location.</p>
+  </div>
+
+  <p>You may change the values and click update.</p>
+
+  <form>
+    <label>Latitude</label>
+    <input id="latitude-input" step=".0000001" type="number">
+    <label>Longitude</label>
+    <input id="longitude-input" step=".0000001" type="number">
+    <button onclick="updateLocation()" type="button">Update</button>
+  </form>
+
+  <p id="lt100" style="display: none;">You are within 100m of detected location.</p>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
